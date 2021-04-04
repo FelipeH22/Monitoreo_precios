@@ -1,14 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.alkosto.com/llanta-pirelli-p1-185-65r15'
-page = requests.get(URL)
-soup = BeautifulSoup(page.content, 'html.parser')
-sentencias = soup.find_all('span', class_='price')
-for sentencia in sentencias:
-  sentencia=str(sentencia).split("span")
-  for x in sentencia:
-    if "itemprop=\"price\">" in x:
-      precio=x.split(">")[1].rsplit("<")[0]
-print("Precio del producto: "+precio)
+get_precio=lambda codigo: str(codigo.find('span', class_='price')).split("\n")[1].rsplit("</")[0].split(">$")[1].lstrip()
+get_nombre=lambda url: " ".join(url.split(".com/")[1].split("-"))
+get_producto=lambda url: get_precio(BeautifulSoup(requests.get(url).content, 'html.parser'))
 
+url='https://www.alkosto.com/ringo-croquetas-adultos-20kg'
+print("El precio de "+get_nombre(url)+" es: "+get_producto(url))
