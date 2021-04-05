@@ -7,11 +7,6 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 
 
 #### Ejecutar proyecto
-Creando un entorno virtual dentro del proyecto.
-```
-~$ pip install virtualenv
-~$ virtualenv envProlog
-```
 ##Instalar librerías
 ```
 ~$ pip install -r requirements.txt
