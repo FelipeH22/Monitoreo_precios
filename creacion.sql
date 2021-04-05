@@ -8,9 +8,9 @@ CREATE TABLE personas(
 );
 CREATE TABLE productos(
 	id INT NOT NULL AUTO_INCREMENT,
-	nombre VARCHAR(45) NOT NULL,
+	nombre VARCHAR(500) NOT NULL,
     tienda VARCHAR(20) NOT NULL,
-    url VARCHAR(200) NOT NULL,
+    url VARCHAR(500) NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE per_pro(
