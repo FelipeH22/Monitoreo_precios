@@ -7,11 +7,11 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 
 
 #### Ejecutar proyecto
-##Instalar librerías
+###Instalar librerías
 ```
 ~$ pip install -r requirements.txt
 ```
-##Ejecutar proyecto
+###Ejecutar proyecto
 ```
 ~$ python manage.py runserver
 ```
