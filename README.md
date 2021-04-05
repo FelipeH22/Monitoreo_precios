@@ -5,11 +5,11 @@
 #### Descripción
 _Haciendo uso de web scraping en Python se llevará un historial de precios que tomarán los productos ingresados por el usuario a lo largo del tiempo que dure en observación. Este obtendrá gráficos y análisis sobre la variación y se mostrará también que tan oportuna sería una compra en ese momento_
 
-####Instalar librerías
+#### Instalar librerías
 ```
 ~$ pip install -r requirements.txt
 ```
-####Ejecutar proyecto
+#### Ejecutar proyecto
 ```
 ~$ python manage.py runserver
 ```
