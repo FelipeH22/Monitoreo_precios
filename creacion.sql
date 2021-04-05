@@ -31,3 +31,4 @@ CREATE TABLE precios(
 );
 ALTER TABLE personas ADD CONSTRAINT correo CHECK (correo LIKE '%___@___%');
 ALTER TABLE personas ADD UNIQUE(correo);
+ALTER TABLE productos ADD UNIQUE(nombre);
