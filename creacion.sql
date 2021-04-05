@@ -30,3 +30,4 @@ CREATE TABLE precios(
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 ALTER TABLE personas ADD CONSTRAINT correo CHECK (correo LIKE '%___@___%');
+ALTER TABLE personas ADD UNIQUE(correo);
