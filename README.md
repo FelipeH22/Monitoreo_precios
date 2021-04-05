@@ -24,7 +24,6 @@ Creando un entorno virtual dentro del proyecto.
 #### Ejecutar por consola un archivo en específico
 ```
 ~$ python nombre_archivo.py
-
 ```
 
 #### Estructura del proyecto
@@ -36,7 +35,7 @@ Creando un entorno virtual dentro del proyecto.
       + urls.py
       + wsgi.py
     + templates/
-    + creacion.sql/
+    + creacion.sql
     + manage.py
     + README.md
     + requirements.txt
