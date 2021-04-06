@@ -19,5 +19,11 @@ def insert_persona(correo,password):
     curs.execute("INSERT INTO personas (correo,pass) VALUES (%s,%s)", valores)
     con.commit()
 
-insert_persona("juherrera5@gmail.com","holamuybuenastardes$4567")
-print(get_personas())
+def get_productos_persona(correo):
+    curs = con.cursor()
+    curs.execute("SELECT personas.correo, productos.nombre, precios.precio, precios.fecha FROM personas JOIN per_pro r1 ON r1.id_persona=personas.id JOIN productos ON r1.id_producto=productos.id JOIN precios ON r1.id_producto=precios.id_producto AND fecha=(SELECT MAX(fecha) FROM precios pree WHERE r1.id_producto=pree.id_producto) WHERE personas.correo= %s; ", (correo,))
+    resultado=curs.fetchall()
+    return resultado
+
+print(get_productos_persona("juherrera1@gmail.com"))
+
