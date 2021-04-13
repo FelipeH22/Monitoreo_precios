@@ -25,5 +25,5 @@ def get_productos_persona(correo):
     resultado=curs.fetchall()
     return resultado
 
-print(get_productos_persona("juherrera1@gmail.com"))
+
 
