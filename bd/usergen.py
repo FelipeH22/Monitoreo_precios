@@ -45,8 +45,8 @@ def genera_claves(correo):
     return password
 
 def genera_usuario():
-    for a in range(0,50):
-        for x in range(0,100000):
+    for a in range(0,25):
+        for x in range(0,200000):
             genera_correos()
             clave=genera_claves(correos[x])
             archivo=open("datos"+str(a)+".txt","a")
