@@ -31,7 +31,7 @@ insert()
 import names
 import random
 import base64
-import time
+
 correos=list()
 def genera_correos():
     correo=str(names.get_first_name()+names.get_first_name()+names.get_last_name()+names.get_last_name()+"@monitoreo_pre.co")
@@ -45,9 +45,10 @@ def genera_claves(correo):
     return password
 
 def genera_usuario():
-    for x in range(0,500000):
-        genera_correos()
-        clave=genera_claves(correos[x])
-        archivo=open("datos.txt","a")
-        archivo.write("\""+str(correos[x])+"\";\""+str(clave)[2:].rsplit("\'")[0]+"\""+"\n")
+    for a in range(0,50):
+        for x in range(0,100000):
+            genera_correos()
+            clave=genera_claves(correos[x])
+            archivo=open("datos"+str(a)+".txt","a")
+            archivo.write("\""+str(correos[x])+"\";\""+str(clave)[2:].rsplit("\'")[0]+"\""+"\n")
 genera_usuario()
