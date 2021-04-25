@@ -16,7 +16,7 @@ def get_personas():
 def insert_persona(correo,password):
     curs=con.cursor()
     valores=(correo,codificador.b64encode(bytes(password, 'utf-8')))
-    curs.execute("INSERT INTO personas (correo,pass) VALUES (%s,%s)", valores)
+    curs.execute("INSERT INTO personas (correo,pass) VALUES (?,?)", valores)
     con.commit()
 
 def get_productos_persona(correo):

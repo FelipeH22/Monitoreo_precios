@@ -1,15 +1,14 @@
-import mysql.connector as connector
+import pyodbc
 
 def crea_conexion():
-    config={
-        "user": "root",
-        "password": "toor",
-        "host": "localhost",
-        "database": "monitoreo_precios"
-    }
+    direccion_servidor = 'monitoreop.database.windows.net'
+    nombre_bd = 'monitoreo_precios'
+    nombre_usuario = 'user'
+    password = 'colombia$2021'
     try:
-        c = connector.connect(**config)
-        return c
-    except:
-        print("error en la conexión")
-
+        conexion=pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' +
+                                  direccion_servidor+';DATABASE='+nombre_bd+';UID='+nombre_usuario+';PWD=' + password)
+        print("Conexión exitosa")
+        return conexion
+    except Exception as e:
+        print("Ocurrió un error al conectar a SQL Server: ", e)
