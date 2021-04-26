@@ -1,19 +1,22 @@
 import conecta
 import base64 as codificador
+from time import time
 
+start=time()
 con=conecta.crea_conexion()
 def get_persona(correo):
     curs=con.cursor()
-    curs.execute("SELECT * FROM personas WHERE correo= %s",(correo,))
+    curs.execute("SELECT * FROM personas WHERE correo= ?",(correo,))
     return curs.fetchone()
 
 def get_personas():
     curs=con.cursor()
-    curs.execute("SELECT * FROM personas")
+    query="SELECT TOP 1000000 * FROM personas"
+    curs.execute(query)
     resultados=curs.fetchall()
     return resultados
 
-
+get_personas()
 def get_ejemplo():
     curs=con.cursor()
     #curs.execute("SELECT * FROM personas fetch first 100 rows only ")
