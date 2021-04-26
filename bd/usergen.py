@@ -32,23 +32,21 @@ import names
 import random
 import base64
 
-correos=list()
 def genera_correos():
-    correo=str(names.get_first_name()+names.get_first_name()+names.get_last_name()+names.get_last_name()+"@monitoreo_pre.co")
-    if not correo in correos:
-      correos.append(correo.lower())
+    correo=str(names.get_first_name()+names.get_first_name()+names.get_last_name()+names.get_last_name())
+    return correo
 
 def genera_claves(correo):
     signos={0:"$",1:"_",2:"-",3:".",4:"%",5:"#"}
-    password=correo.split("@")[0]+signos[random.randint(0,5)]+str(random.randint(0,9999))
+    password=correo+signos[random.randint(0,5)]+str(random.randint(0,9999))
     password=base64.b64encode(bytes(password, 'utf-8'))
     return password
 
 def genera_usuario():
-    for a in range(0,25):
-        for x in range(0,200000):
-            genera_correos()
-            clave=genera_claves(correos[x])
-            archivo=open("datos"+str(a)+".txt","a")
-            archivo.write("\""+str(correos[x])+"\";\""+str(clave)[2:].rsplit("\'")[0]+"\""+"\n")
+    archivo=open("datos0.txt","a")
+    for v in range(0,50000000):
+        correo=genera_correos()
+        clave=genera_claves(correo)
+        correo=correo+str(v)+"@monitoreo_precios.co"
+        archivo.write("\""+correo+"\";\""+str(clave)[2:].rsplit("\'")[0]+"\""+"\n")
 genera_usuario()
