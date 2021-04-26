@@ -1,5 +1,3 @@
 beautifulsoup4
 requests
-mysql-connector-python
 virtualenv
-Django
