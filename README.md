@@ -21,15 +21,16 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 
 #### Estructura del proyecto
 + Monitoreo_precios/
-    + Monitoreo_precios/
-      + __init__.py
-      + asgi.py
-      + settings.py
-      + urls.py
-      + wsgi.py
-    + templates/
-    + creacion.sql
+    + bd/
+        + conecta.py
+        + gen_per_pro.py
+        + persona.py
+        + pricegen.py
+        + productgen.py
+        + producto.py
+        + usergen.py     
+    + ws/
+        + WS.py  
     + manage.py
     + README.md
     + requirements.txt
-    + WS.py
