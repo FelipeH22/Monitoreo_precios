@@ -2,12 +2,13 @@ import sys
 sys.path.append('../bd')
 from bd import conecta
 from bd import persona
-
+from bd import producto
+from bd import precio
+from bd import pers_prod
 from time import  time
 
 
 class Node:
-
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -144,7 +145,7 @@ class Stack:
         node.next = self.top
         self.top = node
 
-    def pop():
+    def pop(self):
         if self.empty():
             print("The stack has no element to pop")
             node = Node(None)
@@ -160,31 +161,76 @@ class Stack:
         else:
             return False
 
-class Person():
-    def __init__(self, id, name, password):
+class person():
+    def __init__(self, id, correo, password):
         self.id = id
-        self.name = name
+        self.correo = correo
         self.password = password
 
     def show(self):
-        print(str(self.id) + ' ' + str(self.name) + ' ' + str(self.password))
+        print(str(self.id) + ' ' + str(self.correo) + ' ' + str(self.password))
 
+class product():
+    def __init__(self, id, nombre, tienda, url):
+        self.id=id
+        self.nombre=nombre
+        self.tienda=tienda
+        self.url=url
+
+    def show(self):
+        print(str(self.id)+' '+str(+self.nombre)+' '+str(self.tienda)+' '+str(self.url))
+
+class price():
+    def __init__(self, id, precio, fecha, id_producto):
+        self.id=id
+        self.precio=precio
+        self.fecha=fecha
+        self.id_producto=id_producto
+
+    def show(self):
+        print(str(self.id)+" "+str(+self.precio)+" "+str(self.fecha)+" "+str(self.id_producto))
+
+class per_pro():
+    def __init__(self,id_persona,id_producto):
+        self.id_persona=id_persona
+        self.id_producto=id_producto
+    def show(self):
+        print(str(self.id_persona)+" "+str(+self.id_producto))
 
 datostime = time()
-datos = persona.get_ejemplo()
+datos_persona=persona.get_personas()
+datos_producto=producto.get_productos()
+datos_precios=precio.get_precios()
+datos_pers_prod=pers_prod.get_pers_prod()
+
 datosFin = time()-datostime
 
-DoublyLinkedList = DoublyLinkedList()
+lista_personas=DoublyLinkedList()
+lista_productos=DoublyLinkedList()
+lista_precios=DoublyLinkedList()
+lista_per_pro=DoublyLinkedList()
 
 startTime = time()
 
-for x in datos:
-    newPerson = Person(x[0], x[1], x[2])
-    DoublyLinkedList.insert_at_end(newPerson)
+for x in datos_persona:
+    newPerson = person(x[0], x[1], x[2])
+    lista_personas.insert_at_end(newPerson)
+for x in datos_producto:
+    newPerson = product(x[0], x[1], x[2],x[3])
+    lista_personas.insert_at_end(newPerson)
+for x in datos_precios:
+    newPerson = price(x[0], x[1], x[2],x[3])
+    lista_personas.insert_at_end(newPerson)
+for x in datos_pers_prod:
+    newPerson = per_pro(x[0], x[1])
+    lista_personas.insert_at_end(newPerson)
+
 
 totalTime = time()-startTime
-
-DoublyLinkedList.print()
+lista_personas.print()
+lista_productos.print()
+lista_precios.print()
+lista_per_pro.print()
 
 print("Tiempo Traida: ",datosFin)
 print("Insercción: ",totalTime)
