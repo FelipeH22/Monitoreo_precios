@@ -4,7 +4,7 @@ con=conecta.crea_conexion()
 
 def get_producto(url):
     curs=con.cursor()
-    curs.execute("SELECT id FROM productos WHERE url= %s",(url,))
+    curs.execute("SELECT id FROM productos WHERE url= ?",(url,))
     return curs.fetchone()
 
 def get_precio_actual(id):
@@ -27,5 +27,5 @@ def get_productos():
 def insert_producto(nombre,tienda,url):
     curs=con.cursor()
     valores=(nombre,tienda,url)
-    curs.execute("INSERT INTO productos (nombre,tienda,url) VALUES (%s,%s,%s)", valores)
+    curs.execute("INSERT INTO productos (nombre,tienda,url) VALUES (?,?,?)", valores)
     con.commit()
