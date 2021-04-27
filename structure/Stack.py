@@ -12,6 +12,7 @@ class Stack:
     node = Node(item)
     node.next = self.top
     self.top = node
+
   
   def pop():
     if self.empty():
@@ -22,6 +23,12 @@ class Stack:
       node = self.top
       self.top = self.top.next
       return node
+  
+  def top():
+    if self.empty():
+      print("The stack has no element")
+    else:
+      return self.top
   
   def empty(self):
     if self.top is None:
