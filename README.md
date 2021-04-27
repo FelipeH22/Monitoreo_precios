@@ -9,10 +9,6 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 ```
 ~$ pip install -r requirements.txt
 ```
-#### Ejecutar proyecto
-```
-~$ python manage.py runserver
-```
 
 ##### Ejecutar por consola un archivo en específico
 ```
