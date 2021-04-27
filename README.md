@@ -28,7 +28,12 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
         + pricegen.py
         + productgen.py
         + producto.py
-        + usergen.py     
+        + usergen.py 
+    + structure
+        + DoublyLinkedList.py
+        + Stack.py
+        + __init__.py
+        + dataEstructure.py     
     + ws/
         + WS.py  
     + manage.py
