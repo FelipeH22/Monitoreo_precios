@@ -14,14 +14,6 @@ def get_personas():
     resultados=curs.fetchall()
     return resultados
 
-def get_ejemplo():
-    curs=con.cursor()
-    #curs.execute("SELECT * FROM personas fetch first 100 rows only ")
-    curs.execute("SELECT * FROM personas  ")
-    resultados=curs.fetchall()
-    for x in  resultados:  print(x)
-    return resultados
-
 def insert_persona(correo,password):
     curs=con.cursor()
     valores=(correo,codificador.b64encode(bytes(password, 'utf-8')))
