@@ -9,7 +9,7 @@ def get_persona(correo):
 
 def get_personas():
     curs=con.cursor()
-    query="SELECT TOP 1000 * FROM personas"
+    query="SELECT * FROM personas"
     curs.execute(query)
     resultados=curs.fetchall()
     return resultados

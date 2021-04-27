@@ -1,3 +1,9 @@
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+    self.prev = None
+
 class DoublyLinkedList:
   def __init__(self):
     self.head = None
@@ -8,7 +14,6 @@ class DoublyLinkedList:
       node = Node(data)
       self.head = node
       self.tail = node
-      print("node inserted")
       return
     node = Node(data)
     node.next = self.head
@@ -19,7 +24,6 @@ class DoublyLinkedList:
       node = Node(data)
       self.head = node
       self.tail = node
-      print("node inserted")
       return
     node = Node(data)
     self.tail.next = node
