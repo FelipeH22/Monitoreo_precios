@@ -1,9 +1,3 @@
-class Node:
-  def __init__(self, data):
-    self.data = data
-    self.next = None
-    self.prev = None
-
 class DoublyLinkedList:
   def __init__(self):
     self.head = None
@@ -51,6 +45,18 @@ class DoublyLinkedList:
         else:
           self.tail = node
         n.next = node
+  
+  def search(self, x):
+    if self.head is None:
+      print("List is empty")
+      return
+    else:
+      n = self.head
+      while n is not None:
+        if n.data == x:
+          return True
+        n = n.next
+      return False
 
   def delete_at_start(self):
     if self.head is None:
