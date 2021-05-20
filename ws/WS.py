@@ -6,5 +6,5 @@ get_nombre=lambda url: " ".join(url.split(".com/")[1].split("-"))
 get_producto=lambda url: get_precio(BeautifulSoup(requests.get(url).content, 'html.parser'))
 get_tienda=lambda url: url.split(".com/")[0].split(".")[1]
 
-"""url='https://www.alkosto.com/ringo-croquetas-adultos-20kg'
+url=""
 print("El precio de "+get_nombre(url)+" es: "+get_producto(url)+" la tienda es: "+get_tienda(url))"""
