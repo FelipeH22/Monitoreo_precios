@@ -1,6 +1,6 @@
 import conecta
 from datetime import datetime
-from ws import WS
+from ws import ws
 import producto
 
 con=conecta.crea_conexion()
@@ -24,7 +24,7 @@ for link in archivo:
     contador=int(get_producto(link)[0])
     print(contador)
     try:
-        precio=int("".join(WS.get_producto(link).split(".")))
+        precio=int("".join(ws.get_producto(link).split(".")))
         id_pr=int(contador)
         print(precio,contador)
         insert_precio(precio,contador)

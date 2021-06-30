@@ -1,9 +1,9 @@
-from ws import WS
+from ws import ws
 import producto
 
 def insert(url):
     try:
-        producto.insert_producto(WS.get_nombre(url),WS.get_tienda(url),url)
+        producto.insert_producto(ws.get_nombre(url), ws.get_tienda(url), url)
         print("Se ingresó el producto exitosamente")
     except Exception as e: print("No se pudo insertar el producto",e)
 
