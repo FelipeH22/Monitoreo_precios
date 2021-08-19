@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #F5F5F1;
+}
+
+.footer{
+    width: 100%;
+    height: 40px;
+    background-color: #31454D;
+}
+
+.nav_bar{
+    width: 100%;
+    height: 100px;
+    background-color: blueviolet;
+    display: flex;
+    border-bottom:#4F5758 2px solid ;
+}
+.nav_left{
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_logo{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("../resources/logo.png");  
+    background-size: 140%;
+    
+}
+
+.nav_right{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.global_container{
+    width: 100%;
+    height: 39vw;
+    background-color: brown;
+    display: flex;   
+}
+
+.vertical_menu{
+    width: 100px;
+    height: inherit;
+    background-color: #F5F5F1;
+    display: flex;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    border-left:#4F5758 2px solid ;
+}
+
+.container{
+    width: 100%;
+    height: inherit;
+    background-color: #F5F5F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+    width: 100%;
+    height: 33.3%;
+    font-size: 20px;
+    font-family: 'Lato Hairline', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.4s;
+}
+
+
+.item:hover{
+    background-color: #4F5758;
+    color: white;
+}
+
+
+.circule{
+    width: 70px;
+    height: 70px;
+    background-image: url("../resources/perfile.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.name{
+    font-size: 20px;
+    background-color: transparent;
+    font-family: 'Lato Hairline', sans-serif;
+}
+
+.sub_container{
+    width: 80%;
+    height: 70%;
+    display: flex;
+}
+
+.right_container{
+    width: 50%;
+    font-family: 'Lato Hairline', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product_image{
+    width: 80%;
+    height: 200px;
+    margin: 20px;
+    background-color: #F5F5F1;
+    object-fit: scale-down;
+    object-position: center center;
+}
+
+.sub_container p{
+    font-weight: bold;
+}
+
+.price_container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.right{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left{
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.plot{
+    width: 50%;
+    display: flex;     
+    align-items: center;
+    justify-content: center;
+}
