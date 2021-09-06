@@ -25,6 +25,7 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
         + producto.py
     + django-app/
         + mon_django/
+            + __init__.py   
         + product/
         + scraper/
         + static/
