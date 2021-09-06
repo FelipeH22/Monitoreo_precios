@@ -13,4 +13,3 @@ def crea_conexion():
         print("Ocurrió un error al conectar a SQL Server: ", e)
 
 crea_conexion()
-print('Hello world')
