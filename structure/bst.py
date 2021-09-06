@@ -1,6 +1,8 @@
 class BST:
+
   def __init__(self):
     self.root = None
+
   def Find(self, k, R):
     if R.data == k:
       return R
@@ -12,21 +14,25 @@ class BST:
       if R.right != None:
         return self.Find(k, R.right)
       return R
+
   def Next(self, N):
     if N.right != None:
       return self.LeftDescendant(N.right)
     else:
       return self.RightAncestor(N)
+
   def LeftDescendant(self, N):
     if N.left == None:
       return N
     else:
       return self.LeftDescendant(N.left)
+
   def RightAncestor(self, N):
     if N.data < N.parent.data:
       return N.parent
     else:
       return self.RightAncestor(N.parent)
+
   def RangeSearch(self, x, y, R):
     L = []
     N = self.Find(x, R)
@@ -35,6 +41,7 @@ class BST:
         L.append(N)
       N = self.Next(N)
     return L
+
   def Insert(self, k):
     if self.root == None:
       r = Node_BST(k)
@@ -48,6 +55,7 @@ class BST:
           P.right = n
         else:
           P.left = n
+
   def Delete(self, N):
     if N.right == None:
       if (N.left != None):
@@ -75,6 +83,7 @@ class BST:
       X.left = None
       X.data = None
       X.right = None
+
   def Promote(self,N):
     P = N.parent.parent
     if N.data < P.data:
@@ -82,6 +91,7 @@ class BST:
     else:
       P.right = N
     N.parent = P
+
 def InOrderTraversal(N):
   if N == None:
     return

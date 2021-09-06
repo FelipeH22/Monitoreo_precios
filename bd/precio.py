@@ -11,6 +11,6 @@ def get_precios():
 
 def get_precios_producto(url):
     curs=con.cursor()
-    curs.execute("SELECT top 10000 precio FROM precios join productos on precios.id_producto=productos.id where productos.url=?",(url,))
+    curs.execute("SELECT top 100000 precio FROM precios")
     resultados=curs.fetchall()
     return resultados
