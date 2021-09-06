@@ -19,19 +19,31 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 + Monitoreo_precios/
     + bd/
         + conecta.py
-        + gen_per_pro.py
+        + pers_prod.py
         + persona.py
-        + pricegen.py
-        + productgen.py
+        + precio.py
         + producto.py
-        + usergen.py 
+    + django-app/
+        + mon_django/
+        + product/
+        + scraper/
+        + static/
+        + templates/
+        + user/
+        + manage.py
+        + requirements.txt 
     + structure
-        + DoublyLinkedList.py
-        + Stack.py
         + __init__.py
-        + dataEstructure.py     
+        + bst.py
+        + data_structure.py
+        + hash_table.py
+        + heap.py
+        + node.py
+        + node_bst.py
+        + node_hash.py
+        + precio_estructuras.py
+        + stack.py   
     + ws/
-        + WS.py  
-    + manage.py
+        + ws.py  
     + README.md
     + requirements.txt
