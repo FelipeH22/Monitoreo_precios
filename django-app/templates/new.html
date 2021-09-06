@@ -49,10 +49,9 @@
             </div>
 
             <h1 style="background-color: transparent;">Añadir Nuevo Producto</h1>
-
             <div>
                 <h3 style="background-color: white;" >1. Copia el link del producto de una tienda válida</h3>
-                <h3 style="background-color: white;">2. Ve a la sección de mis productos y recarga</h3>
+                <h3 style="background-color: white;">2. Registra el precio</h3>
             </div>
     
 
@@ -64,16 +63,48 @@
                 <p style="color:teal;background-color: white;">tienda :{{tienda}}</p>
             {% endif%}
 
-            <div class="new" style="width: 100%; display: flex; flex-direction: column;">
-                <form  method="POST" style="width: 100%;" action="{% url 'new' email%}">
+            <div class="new">
+                <form class="form_new" method="POST" style="width: 100%;" action="{% url 'new' email%}">
                     {% csrf_token %}
                     <input style="background-color: white;" name ='url_product' class="input" type="text" value="" placeholder="url del producto">
                     <button class="button search" type="submit" >  <b style="background-color: transparent;">Buscar</b> </button>
-                </form>            
+                </form>    
+                {% if tienda %}        
+                    <br>
+                    <div class="results">
+                        <h3 style="background-color: white;">Resultado</h3>
+                        <table class="table_results" tyle="background-color: white;">
+                            <thead >
+                                <tr>
+                                    <th>Propiedad</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tienda</td>
+                                    <td>{{tienda}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td><b>{{nombre}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Precio Actual</td>
+                                    <td><b>{{producto}}</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form class="send" method="POST" style="width: 100%;" action="{% url 'new' email%}">
+                            {% csrf_token %}
+                            <button class="button search" type="submit" >  <b style="background-color: transparent;">Subir Precio</b> </button>
+                        </form>
+                        {%if saved %}
+                            <p>{{saved}}</p>
+                        {% endif%}
+                    </div>
+                {% endif%}
             </div>
-
-            
-
         </div>
     </div>
 
