@@ -25,12 +25,43 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
         + producto.py
     + django-app/
         + mon_django/
-            + __init__.py   
+            + __init__.py
+            + asgi.py
+            + settings.py
+            + urls.py
+            + wsgi.py   
         + product/
+            + migrations/
+            + __init__.py
+            + admin.py
+            + apps.py
+            + models.py
+            + tests.py
+            + views.py
         + scraper/
+            + migrations/
+            + __init__.py
+            + admin.py
+            + apps.py
+            + models.py
+            + tests.py
+            + views.py
         + static/
+            + resources/
+            + styles/
         + templates/
+            + detail_product.html
+            + login.html
+            + my_products.html
+            + new.html
         + user/
+            + migrations/
+            + __init__.py
+            + admin.py
+            + apps.py
+            + models.py
+            + tests.py
+            + views.py
         + manage.py
         + requirements.txt 
     + structure
