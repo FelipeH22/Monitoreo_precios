@@ -16,66 +16,62 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
 ```
 
 #### Estructura del proyecto
-+ Monitoreo_precios/
-    + bd/
-        + conecta.py
-        + pers_prod.py
-        + persona.py
-        + precio.py
-        + producto.py
-    + django-app/
-        + mon_django/
-            + __init__.py
-            + asgi.py
-            + settings.py
-            + urls.py
-            + wsgi.py   
-        + product/
-            + migrations/
-            + __init__.py
-            + admin.py
-            + apps.py
-            + models.py
-            + tests.py
-            + views.py
-        + scraper/
-            + migrations/
-            + __init__.py
-            + admin.py
-            + apps.py
-            + models.py
-            + tests.py
-            + views.py
-        + static/
-            + resources/
-            + styles/
-        + templates/
-            + detail_product.html
-            + login.html
-            + my_products.html
-            + new.html
-        + user/
-            + migrations/
-            + __init__.py
-            + admin.py
-            + apps.py
-            + models.py
-            + tests.py
-            + views.py
-        + manage.py
-        + requirements.txt 
-    + structure
-        + __init__.py
-        + bst.py
-        + data_structure.py
-        + hash_table.py
-        + heap.py
-        + node.py
-        + node_bst.py
-        + node_hash.py
-        + precio_estructuras.py
-        + stack.py   
-    + ws/
-        + ws.py  
-    + README.md
-    + requirements.txt
+Monitoreo_precios
+├── bd/
+│   ├── conecta.py
+│   ├── pers_prod.py
+│   ├── persona.py
+│   ├── precio.py
+│   └── producto.py
+├── django_app/
+│   ├── mon_django/
+|   |   ├── __init__.py
+|   |   ├── asgi.py
+|   |   ├── settings.py
+|   |   ├── urls.py
+|   |   └── wsgi.py
+│   ├── product/
+|   |   ├── migrations/
+|   |   ├── __init__.py
+|   |   ├── admin.py
+|   |   ├── apps.py
+|   |   ├── models.py
+|   |   ├── tests.py
+|   |   └── views.py
+│   ├── scraper/
+|   |   ├── migrations/
+|   |   ├── __init__.py
+|   |   ├── admin.py
+|   |   ├── apps.py
+|   |   ├── models.py
+|   |   ├── tests.py
+|   |   └── views.py
+│   ├── static/
+|   |   ├── resources/
+|   |   |   ├── icon_web.png
+|   |   |   ├── logo.png
+|   |   |   └── perfile.py
+|   |   └── styles/
+|   |   |   ├── detail_product.css
+|   |   |   ├── login.css
+|   |   |   ├── my_products.css
+|   |   |   └── new.css
+│   ├── templates/
+|   |   ├── detail_product.html
+|   |   ├── login.html
+|   |   ├── my_products.html
+|   |   └── new.html
+│   ├── user/
+|   |   ├── migrations/
+|   |   ├── __init__.py
+|   |   ├── admin.py
+|   |   ├── apps.py
+|   |   ├── models.py
+|   |   ├── tests.py
+|   |   └── views.py
+│   ├── manage.py
+│   └── producto.py
+├── structure/
+├── ws/
+└── requirements.txt
+
