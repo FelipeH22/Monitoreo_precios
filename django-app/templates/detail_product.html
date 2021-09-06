@@ -25,21 +25,26 @@
     <div class="global_container">
         <div class="vertical_menu">
             <div class="item">
-                <a href="{% url 'new' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Nuevo</b></a>
+                <a href="{% url 'new' email %}" style="background-color: transparent; text-decoration: none;color: black"> <b style="background-color: transparent;">Nuevo</b></a>
             </div >
+
+            <!--
+
+                <div class = "item">
+                    <a href="" style="background-color: transparent;"> <b style="background-color: transparent;">Mejores Ofertas</b> </a>
+                </div>
+            -->
+
             <div class = "item">
-                <a href="{% url 'new' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Mejores Ofertas</b> </a>
-            </div>
-            <div class = "item">
-                <a href="{% url 'products' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Mis productos</b></a>
+                <a href="{% url 'products' email %}" style="background-color: transparent; text-decoration: none;color: black"> <b style="background-color: transparent;">Mis productos</b></a>
             </div>
 
         </div>
         <div class="container">
             <div class="sub_container">
                 <div class="right_container">
-                    <h1>Portatil Hp</h1>
-                    <h2>Almacén: Alkosto</h2>
+                    <h1>{{name_product}}</h1>
+                    <h2>Almacén: {{store}}</h2>
                     <img class="product_image" src="https://www.alkosto.com/medias/195697259623-001-310Wx310H?context=bWFzdGVyfGltYWdlc3wyOTAyMXxpbWFnZS9qcGVnfGltYWdlcy9oNzIvaGNlLzEwNTA2OTkzNjY0MDMwLmpwZ3wyZDYwMWQ2MzA2MDA3Mjc5ZWQxMGRlY2UyMjdhZWNhNmIwYTgxNWEzYWE5ODhmYTZkYmNjZWRiMTY0NzlkMzkz" alt="">
                     <div class="price_container">
                         <div class="right">
@@ -47,7 +52,7 @@
                             <p>Precio de Hoy</p>
                         </div>
                         <div class="left">
-                            <p>1.200.000</p>
+                            <p>{{precio_mas_bajo}}</p>
                             <p>Precio más bajo</p>
                         </div>
                     </div>
@@ -56,13 +61,15 @@
                     <canvas id="chart" ></canvas>
                     <script>
                         var ctx = document.getElementById('chart').getContext('2d');
+                        var months = "{{labels}}";
+                        var precios = "{{precios}}"
                         var myChart = new Chart(ctx, {
                             type: 'line',
                             data: {
-                                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio','Julio'],
+                                labels: months,
                                 datasets: [{
                                     label: 'Precios',
-                                    data: [1400000, 1424000, 1450000, 1500000, 1100000, 1300000,1300000],
+                                    data: precios,
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',

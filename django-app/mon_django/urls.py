@@ -22,9 +22,10 @@ from user import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new/',scraper_views.scraper,name='new'),
+    path('new/<str:email>',scraper_views.scraper,name='new'),
     path('login/',user_views.log,name='login'),
-    path('products/',product_views.show_products,name='products'),
-    path('details/',product_views.show_details,name='details'),
+    path('products/<str:email>',product_views.show_products,name='products'),
+    path('details/<str:name_product>',product_views.show_details,name='details'),
     path('', user_views.log,name=''),
 ]
+

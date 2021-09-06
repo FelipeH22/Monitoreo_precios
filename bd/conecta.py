@@ -3,7 +3,7 @@ import pyodbc
 def crea_conexion():
     direccion_servidor = 'monitoreop.database.windows.net'
     nombre_bd = 'monitoreo_precios'
-    nombre_usuario = 'user'
+    nombre_usuario = 'diego_log'
     password = 'colombia$2021'
     try:
         conexion=pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' +
@@ -11,3 +11,6 @@ def crea_conexion():
         return conexion
     except Exception as e:
         print("Ocurrió un error al conectar a SQL Server: ", e)
+
+crea_conexion()
+print('Hello world')

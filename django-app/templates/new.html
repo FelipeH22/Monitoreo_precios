@@ -16,21 +16,28 @@
         </div>
         <div class="nav_right">
             <div class="name">
-                <p><b style="background-color: white;">Juan Carlos Bodoque</b> </p>
+                <p><b style="background-color: white;">{{email}}</b></p>
             </div>
             <div class="circule"></div>
+            <form action="{% url '' %}">
+                {% csrf_token %}
+                <button class="button_logout" type="submit"><b style="background-color: transparent;">Log Out</b> </button>
+            </form>
         </div>
     </div>
     <div class="global_container">
         <div class="vertical_menu">
             <div class="item">
-                <a href="{% url 'new' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Nuevo</b></a>
+                <a href="{% url 'new' email %}" style="background-color: transparent; text-decoration: none;color: black"> <b style="background-color: transparent;">Nuevo</b></a>
             </div >
+            <!--
+                <div class = "item">
+                    <a href="{% url '' %}" style="background-color: transparent; text-decoration: none;color: black"> <b style="background-color: transparent;">Mejores Ofertas</b> </a>
+                </div>
+
+            -->
             <div class = "item">
-                <a href="{% url 'new' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Mejores Ofertas</b> </a>
-            </div>
-            <div class = "item">
-                <a href="{% url 'products' %}" style="background-color: transparent;"> <b style="background-color: transparent;">Mis productos</b></a>
+                <a href="{% url 'products' email%}" style="background-color: transparent; text-decoration: none;color: black"> <b style="background-color: transparent;">Mis productos</b></a>
             </div>
 
         </div>
@@ -42,12 +49,31 @@
             </div>
 
             <h1 style="background-color: transparent;">Añadir Nuevo Producto</h1>
+
             <div>
                 <h3 style="background-color: white;" >1. Copia el link del producto de una tienda válida</h3>
                 <h3 style="background-color: white;">2. Ve a la sección de mis productos y recarga</h3>
             </div>
-            <input style="background-color: white;" class="input" type="text" value="">
-            <button class="button search" type="submit" >  <b style="background-color: transparent;">Buscar</b> </button>
+    
+
+            {% if error %}
+                <p style="color: red;background-color: white;">{{error}}</p>
+            {% endif%}
+
+            {% if tienda %}
+                <p style="color:teal;background-color: white;">tienda :{{tienda}}</p>
+            {% endif%}
+
+            <div class="new" style="width: 100%; display: flex; flex-direction: column;">
+                <form  method="POST" style="width: 100%;" action="{% url 'new' email%}">
+                    {% csrf_token %}
+                    <input style="background-color: white;" name ='url_product' class="input" type="text" value="" placeholder="url del producto">
+                    <button class="button search" type="submit" >  <b style="background-color: transparent;">Buscar</b> </button>
+                </form>            
+            </div>
+
+            
+
         </div>
     </div>
 
