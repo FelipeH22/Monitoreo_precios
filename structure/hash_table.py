@@ -29,7 +29,7 @@ class hash_table:
       self.table[hash].append(x)
 
   def Search(self,x):
-    hash = self.Hash_func(x)
+    hash=self.Hash_func(x)
     if (self.table[hash] != None):
       for i in self.table[hash]:
         if i.key == x:
