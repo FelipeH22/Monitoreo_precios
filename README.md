@@ -25,14 +25,14 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
         + producto.py
     + django-app/
         + mon_django/
-            + __init__.py
+            + \_\_init__.py
             + asgi.py
             + settings.py
             + urls.py
             + wsgi.py   
         + product/
             + migrations/
-            + __init__.py
+            + \_\_init__.py
             + admin.py
             + apps.py
             + models.py
@@ -40,7 +40,7 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
             + views.py
         + scraper/
             + migrations/
-            + __init__.py
+            + \_\_init__.py
             + admin.py
             + apps.py
             + models.py
@@ -56,7 +56,7 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
             + new.html
         + user/
             + migrations/
-            + __init__.py
+            + \_\_init__.py
             + admin.py
             + apps.py
             + models.py
@@ -65,7 +65,7 @@ _Haciendo uso de web scraping en Python se llevará un historial de precios que 
         + manage.py
         + requirements.txt 
     + structure
-        + __init__.py
+        + \_\_init__.py
         + bst.py
         + data_structure.py
         + hash_table.py
