@@ -1,4 +1,4 @@
-from Heap import Heap
+from heap import Heap
 import sys
 sys.path.append('../bd')
 from bd import precio

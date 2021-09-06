@@ -1,4 +1,4 @@
-from DoublyLinkedList import DoublyLinkedList
+from double_linked_list import DoublyLinkedList
 import sys
 sys.path.append('../bd')
 from bd import persona,producto,precio,pers_prod
