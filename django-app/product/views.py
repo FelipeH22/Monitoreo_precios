@@ -10,10 +10,16 @@ import pdb;
 from user.models import precios_productos_cliente as ppc
 from product.models import Precios_producto as pp
 
+
+correo = ''
+
 # Create your views here.
 def show_products(request,email):
 
+    global correo
+    correo = email
     email = email
+
     list_precios = ppc.objects.filter(correo=email)
 
     productos = {}
@@ -30,7 +36,8 @@ def show_products(request,email):
 def show_details(request,name_product):
 
 
-    email = 'dasdadas'
+    global correo
+    email = correo
     name_product = name_product
 
     list_precios = pp.objects.filter(nombre=name_product)
@@ -42,6 +49,7 @@ def show_details(request,name_product):
     for i in list_precios:
         precios.append(i.precio)
         labels.append(calendar.month_name[i.fecha.month])
+
     
     store = list_precios.first().tienda
     link = list_precios.first().url

@@ -17,9 +17,13 @@
         </div>
         <div class="nav_right">
             <div class="name">
-                <p><b style="background-color: white;">Juan Carlos Bodoque</b> </p>
+                <p><b style="background-color: white;">{{email}}</b> </p>
             </div>
             <div class="circule"></div>
+            <form action="{% url '' %}">
+                {% csrf_token %}
+                <button class="button_logout" type="submit"><b style="background-color: transparent;">Log Out</b> </button>
+            </form>
         </div>
     </div>
     <div class="global_container">
@@ -60,13 +64,22 @@
                 <div class="plot">
                     <canvas id="chart" ></canvas>
                     <script>
+                        var labels = "{{labels}}";
+                        var precios ="{{precios}}";
+                        labels= labels.slice(1,-1).split(',')
+                        precios = precios.slice(1,-1).split(',')
+
+                        labels = labels.map(function(x){
+                            return x.replace(' &#x27;','').replace('&#x27;','').replace('&#x27;','')
+                        })
+
+                    </script>
+                    <script>
                         var ctx = document.getElementById('chart').getContext('2d');
-                        var months = "{{labels}}";
-                        var precios = "{{precios}}"
                         var myChart = new Chart(ctx, {
                             type: 'line',
                             data: {
-                                labels: months,
+                                labels: labels,
                                 datasets: [{
                                     label: 'Precios',
                                     data: precios,
@@ -90,11 +103,8 @@
                                 }]
                             },
                             options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
+                                responsive: true,
+                                
                             }
                         });
                         </script>
