@@ -12,5 +12,5 @@ pyodbc==4.0.32
 pytz==2021.1
 requests==2.26.0
 soupsieve==2.2.1
-sqlparse==0.4.1
+sqlparse==0.4.2
 urllib3==1.26.6
